@@ -34,7 +34,23 @@ else{
         }            
         });
 
+        // Budget calculation area 
+        document.getElementById('btn-calculation').addEventListener('click', function(){
+  
+            const managerCosting = document.getElementById('manager-costing');
+            const coachCosting = document.getElementById('coach-costing');
+            const managerCostingAmountString = parseFloat(Number(managerCosting.value));
+             
+            const coachCostingAmountString = parseFloat(Number(coachCosting.value));
         
+            playerExpense = managerCostingAmountString + coachCostingAmountString + playerExpense;
+        
+            const totalAmountField = document.getElementById('total-amount');
+            totalAmountField.innerHTML = playerExpense;
+            
+            managerCosting.value = '';
+            coachCosting.value = '';
+        });
     
 }   
 }
