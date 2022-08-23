@@ -9,14 +9,22 @@
     <title>MinnsPort</title>
     <!----------- Tailwind CSS  -------------->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!----------- Font Awesome ------------>
-    <script src="https://kit.fontawesome.com/ebb9f329d5.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <!-- header section start -->
     <header>
-        <!-- Top Section Start  -->
+        <!-- nav bar section start  -->
+        <nav>
+            <div class="h-20 pt-2">
+                <img class="" src="images/LOGO-main.png" style="height:60px; " alt="">
+            </div>
+        </nav>
+        <!-- nav bar section end -->
+
+        <!------------------------------------
+                Top Section Start 
+        ------------------------------------->
         <section class=" w-full h-screen bg-no-repeat bg-cover " style="background-image: url(images/hero3.jpg)">
             <div class="w-7/12 mx-auto  text-center pt-60 ">
                 <h1 class="text-7xl text-white">Get The sports <span class="font-bold">Add-On
@@ -45,7 +53,7 @@
 
                     </div>
                     <div class="text-center mb-7">
-                        <button
+                        <button onclick="getPlayersName('Leon Messi')"
                             class="bg-blue-600 hover:bg-blue-900 px-16 py-2 rounded text-white font-semibold text-center">Select</button>
                     </div>
                 </div>
@@ -57,7 +65,7 @@
 
                     </div>
                     <div class="text-center mb-7">
-                        <button
+                        <button onclick="getPlayersName('Mark Anthoni')"
                             class="bg-blue-600 hover:bg-blue-900 px-16 py-2 rounded text-white font-semibold text-center">Select</button>
                     </div>
                 </div>
@@ -69,7 +77,7 @@
 
                     </div>
                     <div class="text-center mb-7">
-                        <button
+                        <button onclick="getPlayersName('Kevin Peter')"
                             class="bg-blue-600 hover:bg-blue-900 px-16 py-2 rounded text-white font-semibold text-center">Select</button>
                     </div>
                 </div>
@@ -81,7 +89,7 @@
 
                     </div>
                     <div class="text-center mb-7">
-                        <button
+                        <button onclick="getPlayersName('Joe Biden')"
                             class="bg-blue-600 hover:bg-blue-900 px-16 py-2 rounded text-white font-semibold text-center">Select</button>
                     </div>
                 </div>
@@ -93,7 +101,7 @@
 
                     </div>
                     <div class="text-center mb-7">
-                        <button
+                        <button onclick="getPlayersName('Donalt Trump')"
                             class="bg-blue-600 hover:bg-blue-900 px-16 py-2 rounded text-white font-semibold text-center">Select</button>
                     </div>
                 </div>
@@ -105,7 +113,7 @@
 
                     </div>
                     <div class="text-center mb-7">
-                        <button
+                        <button onclick="getPlayersName('Jack Marlin')"
                             class="bg-blue-600 hover:bg-blue-900 px-16 py-2 rounded text-white font-semibold text-center">Select</button>
                     </div>
                 </div>
@@ -117,7 +125,7 @@
 
                     </div>
                     <div class="text-center mb-7">
-                        <button
+                        <button onclick="getPlayersName('Alex Heals')"
                             class="bg-blue-600 hover:bg-blue-900 px-16 py-2 rounded text-white font-semibold text-center">Select</button>
                     </div>
                 </div>
@@ -129,7 +137,7 @@
 
                     </div>
                     <div class="text-center mb-7">
-                        <button
+                        <button onclick="getPlayersName('Vin Desel')"
                             class="bg-blue-600 hover:bg-blue-900 px-16 py-2 rounded text-white font-semibold text-center">Select</button>
                     </div>
                 </div>
@@ -141,7 +149,7 @@
 
                     </div>
                     <div class="text-center mb-7">
-                        <button
+                        <button onclick="getPlayersName('Bob Marlin')"
                             class="bg-blue-600 hover:bg-blue-900 px-16 py-2 rounded text-white font-semibold text-center">Select</button>
                     </div>
                 </div>
@@ -152,11 +160,14 @@
             <div class="ml-8">
                 <div class="bg-black h-80 w-72 text-white text-3xl ">
                     <h1 class="font-semibold text-center py-5">Selected-V</h1>
+                    <div id="count">
 
+                    </div>
+                    <div id="show-players">
+
+                    </div>
                 </div>
-                <!--------------------------------
-                    Player selection area End 
-                ---------------------------------->
+                <!----------------- Player selection area End -------------------->
                 <!-------------------------------
                     Budget area Start 
                 ---------------------------------->
@@ -164,40 +175,61 @@
                     <h1 class="text-3xl font-semibold ">Budget</h1>
                     <div class="flex gap-4 mt-4 text-lg justify-between">
                         <h4>Per Player</h4>
-                        <input class="w-24 text-white bg-black p-1   focus:outline-none border-2 border-red-700"
-                            type="text" name="" id="">
+                        <input class="w-24 text-white bg-black p-1 focus:outline-none border-2 border-red-700"
+                            type="text" name="" id="player-costing">
+
                     </div>
-                    <button class="bg-blue-600 hover:bg-blue-900 px-16 py-2 text-lg text-white mt-4">Calculate</button>
+                    <button id="player-costing-calculation-btn"
+                        class="bg-blue-600 hover:bg-blue-900 px-16 py-2 text-lg text-white mt-4">Calculate</button>
                     <div class="flex mb-8 mt-4 text-lg justify-between">
                         <h1>Player expeses </h1>
-                        <h4> $ <span id="" class="text-red-600">5000</span></h4>
+                        <h4> $ <span id="playerExpense" class="text-red-600">00</span></h4>
                     </div>
                     <div class="flex gap-4 mt-4 text-lg justify-between ">
                         <h4>Manager</h4>
                         <input class="w-24 text-white bg-black p-1   focus:outline-none border-2 border-red-700"
-                            type="text" name="" id="" placeholder="">
+                            type="text" name="" id="manager-costing">
                     </div>
                     <div class="flex gap-4 mt-4 text-lg justify-between ">
                         <h4>Coach</h4>
                         <input class="w-24 text-white bg-black p-1   focus:outline-none border-2 border-red-700"
-                            type="text" name="" id="">
+                            type="text" name="" id="coach-costing">
                     </div>
-                    <button class="bg-blue-600 hover:bg-blue-900 px-12 py-2 text-lg text-white mt-4">Calculate
+                    <button id="btn-calculation"
+                        class="bg-blue-600 hover:bg-blue-900 px-12 py-2 text-lg text-white mt-4">Calculate
                         Total</button>
                     <div class="flex text-lg justify-between mt-4">
                         <h1>Total</h1>
-                        <h4> $ <span id="" class="text-red-600 font-bold">11000</span></h4>
+                        <h4> $ <span id="total-amount" class="text-red-600 font-bold">00</span></h4>
                     </div>
                 </div>
-
-                <!-------------------------------
-                    Budget area End 
-                ---------------------------------->
-
+                <!--------- Budget area End ------------->
             </div>
         </section>
-        <!-- All player section End -->
+        <!--------------------- All player section & Player selection area & Budget area End ------------------------------------>
     </main>
+    <footer>
+        <section class="bg-black h-72 flex justify-around pt-16">
+            <div class="pt-6">
+                <img src="images/Logo-footer.png" alt="">
+            </div>
+            <div>
+                <h2 class="text-white text-4xl mb-4">Get in Touch</h2>
+                <input type="email" class="rounded px-12 py-3" placeholder="Enter Your Email" id="InputEmail1Id" />
+                <button id="submit" type="submit" class="bg-blue-600 hover:bg-blue-900 py-3 px-8 rounded text-white ">
+                    Submit
+                </button>
+                <div class="text-white mt-4">
+                    <p>Mirpur-DOHS-Dhaka,Bangladesh</p>
+                    <p>Tel : +8801759390115</p>
+                </div>
+
+            </div>
+
+        </section>
+    </footer>
+    <!-- <script src="js/budget-calculation-total.js"></script> -->
+    <script src="js/player-selection.js"></script>
 </body>
 
 
